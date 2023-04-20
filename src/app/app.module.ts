@@ -7,12 +7,19 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CardComponent } from './components/card/card.component';
+import { AnimeDetailsComponent } from './components/anime-details/anime-details.component';
+import { EpisodePlayerComponent } from './components/episode-player/episode-player.component';
+import { SafePipe } from './safe.pipe';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    CardComponent
+    CardComponent,
+    AnimeDetailsComponent,
+    EpisodePlayerComponent,
+    SafePipe,
   ],
   imports: [
     BrowserModule,

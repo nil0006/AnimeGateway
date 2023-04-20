@@ -1,0 +1,27 @@
+<div *ngIf="animeDetails!=''">
+  <h1 class="text-3xl">anime Info</h1>
+
+  <div class="flex flex-col p-8">
+    <div class="flex flex-col  justify-center md:flex-row md:justify-start ">
+      <div><img [src]="animeDetails.animeImg" alt=""></div>
+      <div class="pl-6 flex flex-col">
+        <span class="text-4xl font-bold text-blue-600"> {{animeDetails.animeTitle}}</span>
+        <span class="py-4 text-2xl"><span class=" text-blue-600">Type: </span>{{animeDetails.type}} </span>
+        <span class="py-4 text-xl"><span class=" text-blue-600">Genre: </span> <span
+            *ngFor="let genre of animeDetails.genres">{{genre}} </span></span>
+        <span class="py-4 text-2xl"><span class=" text-blue-600">Relesed: </span>{{animeDetails.releasedDate}} </span>
+        <span class="py-4 text-2xl"><span class=" text-blue-600">Status: </span>{{animeDetails.status}} </span>
+
+        <span class="py-4 text-2xl w-96"><span class=" text-blue-600">Synopsis: </span><span
+            class="text-sm break-all">{{animeDetails.synopsis}}</span></span>
+      </div>
+      <div class="pl-9 w-1/3 m-auto grid grid-cols-3 gap-4 h-96 overflow-x-hidden overflow-y-scroll"> <button
+          *ngFor="let ep of animeDetails.episodesList;let i=index;"
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded p-5 h-14 m-2"
+          (click)="navigateToEp(ep)">
+          {{ep.episodeNum}}
+        </button></div>
+    </div>
+
+  </div>
+</div>

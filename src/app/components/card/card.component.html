@@ -1,1 +1,6 @@
-<p>card works!</p>
+<div class="w-64 rounded-lg overflow-hidden shadow-lg flex flex-col justify-center m-2 bg-neutral-900" (click)="clickCardData(cardData)" *ngIf="cardData.animeTitle">
+    <img class="h-80 m-3 shadow-pop-br rounded-lg" [src]="cardData.animeImg" alt="Sunset in the mountains">
+    <div class="px-6 py-4">
+      <div class="text-sm text-white mb-2">{{cardData.animeTitle}}</div>
+    </div>
+  </div>

@@ -16,7 +16,12 @@ export class AnimeService {
     let url='https://gogoanime.consumet.stream/popular?page=1'
     return this.http.get(url)
   }
-  public getSingleAnimeData(url:string){
+  public getSingleAnimeData(animeId:string){
+    let url =`https://gogoanime.consumet.stream/anime-details/${animeId}`
+    return this.http.get(url)
+  }
+  public playEp(ep:string){
+    let url=`https://gogoanime.consumet.stream/vidcdn/watch/${ep}`
     return this.http.get(url)
   }
 }

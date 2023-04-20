@@ -6,6 +6,7 @@ import { AnimeService } from 'src/app/services/anime.service';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
+  popularAnime: any;
   constructor(private anime: AnimeService) {}
 
   ngOnInit(): void {
@@ -20,7 +21,7 @@ export class HomeComponent implements OnInit {
   }
   private getPopulerAnime(){
     this.anime.getPopulerAnime().subscribe((res:any)=>{
-      console.log(res);
+       this.popularAnime = res
       
     })
   }

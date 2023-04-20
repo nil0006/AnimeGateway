@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-card',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./card.component.css']
 })
 export class CardComponent implements OnInit {
-
-  constructor() { }
+@Input() cardData:any
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
+    
+  }
+  clickCardData(cardData:any){
+    this.router.navigate(['anime-detail'], {
+      queryParams: { animeTitle: cardData.animeId }})
   }
 
 }
